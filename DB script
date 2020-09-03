@@ -1,0 +1,9 @@
+dotnet ef migrations add OpMigration -c PersistedGrantDbContext -o Migrations/OpDb
+s
+dotnet ef migrations add ConfigMigration -c ConfigurationDbContext -o Migrations/ConfigDb
+
+
+dotnet ef database update --context PersistedGrantDbContext
+
+dotnet ef database update --context ConfigurationDbContext
+

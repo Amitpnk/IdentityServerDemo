@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+
+
+        @model List<string>
+
+
+
+        <h2>
+            Welcome
+            @User.Claims.FirstOrDefault(c =>
+        c.Type == "given_name").Value
+            @User.Claims.FirstOrDefault(c =>
+        c.Type == "family_name").Value!
+        </h2>
+
+
+        @if (User.IsInRole("Admin"))
+        {
+            <h2>You are Admin</h2>
+        }
+
+        @if (User.IsInRole("Operator"))
+        {
+            <h2>You are Operator</h2>
+        }
+
+
+        @if (User.HasClaim("address", "USA"))
+        {
+            <h2>Content for admins in USA</h2>
+        }
+
+        @if (User.HasClaim("address", "UK"))
+        {
+            <h2>Content for admins in UK</h2>
+        }
+
+        @if (User.HasClaim(c => c.Type == "email"))
+        {
+            <h3>
+                <a href='mailto:@User.Claims
+                   .First(c=>
+                    c.Type=="email").Value'>
+                    Send Email
+                </a>
+            </h3>
+        }
+
+        <br />
+
+        <h3>
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </h3>
+
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <h3>
+                <a asp-controller="Account"
+                   asp-action="SignOut">SignOut</a>
+            </h3>
+        }
+    </div>
