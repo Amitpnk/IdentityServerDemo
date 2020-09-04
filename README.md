@@ -3,16 +3,19 @@
 IdentityServer is an implementation of OpenID Connect and OAuth2 specifications that ASP.NET Core developers can use to secure their applications and APIs
 
 
-Identity server
-https://localhost:44357/
+## Application URLs:
 
-API 
-https://localhost:44326/
+|Project|Launch URL|
+|---|---|
+|Identity server|https://localhost:44357/|
+|API |https://localhost:44326/|
+|Mvc client|https://localhost:44363/|
 
-Mvc client
-https://localhost:44363/
 
-Redirect to [IdentityServerDemo.Oauth](https://github.com/Amitpnk/IdentityServerDemo/tree/master/IdentityServerDemo/IdentityServerDemo.Oauth) folder and run below command
+## How to Run:
+
+Navigate to [IdentityServerDemo.Oauth](https://github.com/Amitpnk/IdentityServerDemo/tree/master/IdentityServerDemo/IdentityServerDemo.Oauth) and  run these commands:
+
 
 ```sh
 dotnet ef migrations add OpMigration -c PersistedGrantDbContext -o Migrations/OpDb
