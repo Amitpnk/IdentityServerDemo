@@ -11,3 +11,13 @@ https://localhost:44326/
 
 Mvc client
 https://localhost:44363/
+
+Redirect to [IdentityServerDemo.Oauth](https://github.com/Amitpnk/IdentityServerDemo/tree/master/IdentityServerDemo/IdentityServerDemo.Oauth) folder and run below command
+
+```sh
+dotnet ef migrations add OpMigration -c PersistedGrantDbContext -o Migrations/OpDb
+dotnet ef migrations add ConfigMigration -c ConfigurationDbContext -o Migrations/ConfigDb
+
+dotnet ef database update --context PersistedGrantDbContext
+dotnet ef database update --context ConfigurationDbContext
+```
