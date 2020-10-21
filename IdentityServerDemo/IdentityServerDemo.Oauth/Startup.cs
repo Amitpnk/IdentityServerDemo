@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 using System.Linq;
 using System.Reflection;
 
@@ -25,7 +24,7 @@ namespace IdentityServerDemo.Oauth
         public void ConfigureServices(IServiceCollection services)
         {
 
-            const string connectionString = @"Data Source=amit-pc\\sqlexpress;Initial Catalog=IdentityDb;Integrated Security=True";
+            //const string connectionString = @"Data Source=amit-pc\\sqlexpress;Initial Catalog=IdentityDb;Integrated Security=True";
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddControllersWithViews();
@@ -41,7 +40,7 @@ namespace IdentityServerDemo.Oauth
                     //            sql => sql.MigrationsAssembly(migrationsAssembly));
                     //})
 
-                    
+
                     .AddTestUsers(ServerConfiguration.TestUsers)
                     .AddDeveloperSigningCredential()
                     .AddConfigurationStore(o =>
