@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+        @*@if ((await AuthorizationService.AuthorizeAsync(User, "CanCreateAndModifyData")).Succeeded)*@
+        @if (User.IsInRole("Admin"))
+        {
+            <p>
+                <a asp-action="Create">Create New</a>
+            </p>
+        }
+
+        <div>
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) ;
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) ;
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ });
+            }
+        </div>
+    </div>
