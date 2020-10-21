@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "c39e75e3-1f1f-405c-a77d-ef405fd1a8de",
+		"name": "IS4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "connect/token admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "company-employee",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "codemazesecret",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Shweta",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password@1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5005/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"connect",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api call",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkVCQzc2MTE2NDU5RkQ3RUQ5QTM3NDUyMkUxQThENURCIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2MDMzMDMwNzQsImV4cCI6MTYwMzMwNjY3NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwNSIsImF1ZCI6ImNvbXBhbnlBcGkiLCJjbGllbnRfaWQiOiJjb21wYW55LWVtcGxveWVlIiwic3ViIjoiYTllYTBmMjUtYjk2NC00MDlmLWJjY2UtYzkyMzI2NjI0OWI0IiwiYXV0aF90aW1lIjoxNjAzMzAzMDc0LCJpZHAiOiJsb2NhbCIsImp0aSI6IjRBNEIyNTYzMkQ1RUEwMkYxMjQyNzkwQjdCRDM3OUFCIiwiaWF0IjoxNjAzMzAzMDc0LCJzY29wZSI6WyJjb21wYW55QXBpIiwib3BlbmlkIl0sImFtciI6WyJwd2QiXX0.G0uHntywzARotDWwPNSB4kPdTaNZ5F6N48-6Oer78h5OGIqBQXUHc0oPN7qaIXNISmM-LgNLQAPPNMF4fnk4ZK9IZ-Q2puf_gjzHMHCnXsaomiPItEzOPsvseKl-43-uBjy1ichQmYBe5g_bC1WH1js4Z3wsI-4_1v6QXL7lKhiR4dO4Lsg0_Tajy7epckdeQmBztJQkHxc2SfqWuyICdvvDTnwlWdKt-kX6A5olFDSw431MwgDUs2jyB00bjKfnWqLdwn8huTrbVh7L_qWGl09tc7Z9ztS82I-730bGkpkjWBQqRnbAuRC5RzuGMUIzbCXSjryrd3M7cXIrNCMWhQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5001/weatherforecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"weatherforecast"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
