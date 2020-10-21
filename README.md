@@ -14,7 +14,7 @@ IdentityServer is an implementation of OpenID Connect and OAuth2 specifications 
 
 ## How to Run:
 
-Navigate to [IdentityServerDemo.Oauth](https://github.com/Amitpnk/IdentityServerDemo/tree/master/IdentityServerDemo/IdentityServerDemo.Oauth) and  run these commands:
+Navigate to [IdentityServerDemo.Oauth](https://github.com/Amitpnk/IdentityServerDemo/tree/master/IS/IS.OAuth) and  run these commands:
 
 
 ```sh
