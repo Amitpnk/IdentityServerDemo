@@ -7,9 +7,9 @@ IdentityServer is an implementation of OpenID Connect and OAuth2 specifications 
 
 |Project|Launch URL|
 |---|---|
-|Identity server|https://localhost:44357/|
-|API |https://localhost:44326/|
-|Mvc client|https://localhost:44363/|
+|Identity server|https://localhost:5005/|
+|API |https://localhost:5001/|
+|Mvc client|https://localhost:5010/|
 
 
 ## How to Run:
